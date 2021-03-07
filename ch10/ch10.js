@@ -18,6 +18,7 @@ function init() {
   insertHeading(ul);
   main.appendChild(ul);
 }
+
 // create <li>
 function createListItem(element) {
   const li = document.createElement("li");
@@ -74,21 +75,25 @@ function insertHeading(ul) {
     }
   }
 }
+
+// 插入练习文件
 function insertPractice(ul) {
-  for (const key in object = data.practices) {
-    if (Object.hasOwnProperty.call(object, key)) {
-      const li = createListItem(object[key]);
-      li.firstChild.classList.add('overflow');
+  for (const key in htmls = data.practices.htmls) {
+    if (Object.hasOwnProperty.call(htmls, key)) {
+      htmls[key].name = data.practices.base + htmls[key].name;
+      const li = createListItem(htmls[key]);
       const page = key.padStart(2, 0);
       const insertBefore = ul.querySelector(`[data-page="${page}"]`);
+      li.firstChild.classList.add('overflow');
       ul.insertBefore(li, insertBefore);
-      delete object[key];
+      delete htmls[key];
     }
   }
 }
 
+// 追加练习文件
 function appendPractice(ul) {
-  for (const key in object = data.practices) {
+  for (const key in object = data.practices.htmls) {
     if (Object.hasOwnProperty.call(object, key)) {
       const li = createListItem(object[key]);
       li.firstChild.classList.add('overflow');
@@ -96,8 +101,8 @@ function appendPractice(ul) {
       delete object[key];
     }
   }
-
 }
+
 // Loading
 function loadScript(url) {
   const script = document.createElement('script');

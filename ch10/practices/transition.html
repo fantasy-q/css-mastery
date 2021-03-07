@@ -95,13 +95,17 @@
   <style id="step">
     .step-function {
       margin: 1.5em 1em;
-      padding: 0.5em 1em;
+      padding: 0;
       outline: 2px solid #eee;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
     }
 
     .container {
-      margin: 0;
+      margin: 1em;
       padding: 0;
+      height: 200px;
       outline: 2px solid #ccc;
     }
 
@@ -109,26 +113,58 @@
       display: inline-block;
     }
 
-    .description{
+    .description {
       vertical-align: top;
     }
 
-    .hello {
+    .description code {
+      display: block;
+    }
+
+    .hello-box {
       width: 200px;
       height: 200px;
       outline: 2px solid #ccc;
       box-sizing: border-box;
+      margin-right: 1em;
     }
 
-    .step {
+    .hello {
       transition: background-position .6s steps(6, start);
       background: url(./assets/step-animation.png) no-repeat 0 -1200px;
     }
 
-    .step:hover {
-      /* transition-delay: 0; */
-      /* transition-duration: .6s; */
+    .hello:hover {
       background-position: 0 0;
+    }
+
+    .different {
+      transition: background-position 0s steps(6);
+    }
+
+    .different:hover {
+      transition-duration: .6s;
+    }
+
+    .sticky {
+      transition: background-position 9999999999s steps(6);
+    }
+
+    .sticky:hover {
+      transition-duration: .6s;
+    }
+
+    .delayed {
+      transition: background-position 0s 1s step(6);
+      /* transition-delay: 1s;*/
+    }
+
+    .delayed:hover {
+      transition-delay: 1s;
+    }
+
+    strong {
+      color: red;
     }
 
   </style>
@@ -151,15 +187,49 @@
       <div class="box cubic-bezier"></div>
     </li>
   </ul>
+
   <h2>Step Function</h2>
   <div class='step-function'>
+    <!-- 无改进 -->
     <div class="container">
-      <div class="hello step"></div>
+      <div class="hello-box hello">文字在前景<br>动画在背景</div>
       <div class="description">
-        <p>222</p>
-        <p>222</p>
-        <p>222</p>
-        <p>222</p>
+        <p>通过改变 background-position 实现背景动画, step(6, start) 包括起始状态, 创建了 7 个不同的帧</p>
+        <p>通过 :hover 样式使得在鼠标悬停时发生动画, 鼠标移开动画反向进行
+        <p><strong>问题:</strong> 鼠标快速划过时位置发生错乱</p>
+        <code>transition: background-position .6s <b>steps(6, start)</b>;</code>
+        <code>background: url(./assets/step-animation.png) no-repeat 0 -1200px;</code>
+        <code>:hover { background-position: 0 0; }</code>
+      </div>
+    </div>
+    <!-- Different Transition -->
+    <div class="container">
+      <div class="hello-box hello different">使用不同的过渡</div>
+      <div class="description">
+        <p>初始状态过渡时值为 0, 悬停状态下设置时值</p>
+        <p>鼠标移开时立即恢复成初始状态</p>
+        <code>transition: background-position <b>0s</b> steps(6);</code>
+        <code>:hover { transition-duration: <b>.6s</b>; }</code>
+      </div>
+    </div>
+    <!-- Sticky -->
+    <div class="container">
+      <div class="hello-box hello sticky">黏着过渡</div>
+      <div class="description">
+        <p>给反向过渡一个非常大的时值</p>
+        <p>仍然会反向, 不过可能要保持运行数年才能看到变化</p>
+        <code>transition: background-position <b>9999999999s</b> steps(6);</code>
+        <code>:hover { transition-duration: <b>.6s</b>; }</code>
+      </div>
+    </div>
+    <!-- Delayed -->
+    <div class="container">
+      <div class="hello-box hello delayed">延迟过渡</div>
+      <div class="description">
+        <p>通常过渡随状态改变发生, 通过 transition-delay 可以延迟过渡的发生</p>
+        <p>延迟也可以时负值, 可以让过渡不从初始状态发生</p>
+        <code>transition: background-position 0s <b>1s</b> steps(6);</code>
+        <code>:hover { transition-delay: <b>1s</b>; }</code>
       </div>
     </div>
 

@@ -22,6 +22,7 @@ window.onload = () => {
 
 
 }
+
 function CreatePseudoElementStyle(duration) {
   const style = document.getElementById('box-animate');
   TransitionTiming.forEach((element) => {
