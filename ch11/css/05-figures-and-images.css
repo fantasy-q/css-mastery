@@ -1,0 +1,74 @@
+/* ===== Figures and images ====== */
+
+/**
+* Switch to the following rule to use the margin reference box 
+* as a shape instead:
+*/
+
+/*.fig-moon {
+  max-width: 40%;
+  border-radius: 50%;
+  -webkit-shape-outside: margin-box;
+          shape-outside: margin-box;
+  margin-left: 2em;
+}*/
+.fig-moon {
+  max-width: 40%;
+  -webkit-shape-outside: circle();
+  shape-outside: circle();
+  margin: 2em;
+}
+
+/**
+* 1. Use the image as the shape – the transparent edges will generate it.
+* 2. Uncomment this line to use a polygon instead.
+* 3. Use a shape threshold (if using the image) to set the tolerance level
+*    before the shape is generated.
+* 4. Set a margin on the generated shape.
+* 5. Add a blend mode to make the image fit in with the background better.
+*/
+.fig-planet {
+  max-width: 65%;
+  -webkit-shape-outside: url(../img/saturn.png);
+  /* [1] */
+  shape-outside: url(../img/saturn.png);
+  /* [1] */
+  /*shape-outside: polygon(41.85% 100%, 22.75% 92.85%, 5.6% 73.3%, 0.95% 52.6%, 5.6% 35.05%, 21.45% 17.15%, 37.65% 12.35%, 40% 0, 100% 0%, 100% 100%);*/
+  /* [2] */
+  -webkit-shape-image-threshold: 0.4;
+  /* [3] */
+  shape-image-threshold: 0.4;
+  /* [3] */
+  -webkit-shape-margin: 1em;
+  /* [4] */
+  shape-margin: 1em;
+  /* [4] */
+  mix-blend-mode: screen;
+  /* [5] */
+}
+
+.fig-sun {
+  max-width: 40%;
+}
+
+/**
+* The image of the Sun uses both masking and filters to go from a black-and-white
+* image to a colorized version with transparency. See full-example.html for the 
+* SVG mask version.
+* 1. Add a list of filters to colorize the image.
+* 2. Mask away the background using a radial gradient.
+*/
+.fig-sun {
+  -webkit-filter: contrast(0.34) brightness(1.6) sepia(1) hue-rotate(10deg);
+  /* [1] */
+  filter: contrast(0.34) brightness(1.6) sepia(1) hue-rotate(10deg);
+  /* [1] */
+  -webkit-mask-image: radial-gradient(circle closest-side at 50%, #000, #000 90%, rgba(0, 0, 0, 0) 93%);
+  /* [2] */
+}
+
+.fig-universe {
+  width: 100%;
+  display: block;
+  float: none;
+}

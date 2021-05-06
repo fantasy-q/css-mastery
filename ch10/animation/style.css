@@ -1,0 +1,44 @@
+body {
+  min-width: 1200px;
+}
+
+.keyframe {
+  margin-bottom: 1em;
+  overflow: auto;
+}
+
+.animation {
+  clear: both;
+  padding-left: 9em;
+}
+
+.code {
+  display: inline-block;
+  border: 2px solid;
+  padding: 0 1em;
+  width: auto;
+}
+
+.code p {
+  display: block;
+  text-align: left;
+}
+
+code {
+  display: block;
+}
+
+.description {
+  display: inline-block;
+  margin-left: 2em;
+  vertical-align: top;
+}
+
+.description code.body {
+  display: block;
+  padding-left: 2ch;
+}
+
+.lightblue {
+  color: lightskyblue;
+}
