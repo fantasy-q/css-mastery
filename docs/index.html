@@ -5,32 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    ul {
-      padding: 1em;
-      list-style-type: none;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-  </style>
+  <link rel="stylesheet" href="./assets/normalize.css">
+  <link rel="stylesheet" href="./assets/sidebar.css">
+  <link rel="stylesheet" href="./assets/scrollbar.css">
+  <script src="./assets/sidebar.js"></script>
+  <script defer src="./assets/main.js"></script>
+  <base target="myFrame" />
+  <title>CSS Mastery</title>
 </head>
 
 <body>
-  <ul>
-    <!-- <li><a href="./ch03">第 3 章</a></li> -->
-    <li><a href="./ch04">第 4 章</a></li>
-    <li><a href="./ch05">第 5 章</a></li>
-    <li><a href="./ch06">第 6 章</a></li>
-    <li><a href="./ch07">第 7 章</a></li>
-    <li><a href="./ch08">第 8 章</a></li>
-    <li><a href="./ch09">第 9 章</a></li>
-    <li><a href="./ch10">第 10 章</a></li>
+  <div id="mySidebar" class="sidebar">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  </div>
 
-  </ul>
+  <div id="myFrame" class="iframe-padding">
+    <iframe name="myFrame" src=""></iframe>
+  </div>
+  <!-- <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button> -->
+
+  <script>
+    const $asset = "./assets/";
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,73 @@
+[
+  {
+    "chapter": "1",
+    "title":"基础知识",
+    "path":"home/chapter-01.html",
+    "content":[
+      "01-XX-conditional-rule-block.html",
+      "01-XX-html5-input-types.html"
+    ]
+  },
+  {
+    "chapter": "2",
+    "title":"添加样式",
+    "path":"./chapter-02",
+    "content":[
+      "02-01-folders.html",
+      "02-02-adjacent-sibling.html",
+      "02-03-pseudo-elements.html",
+      "02-04-nth-child-table.html",
+      "02-05-form-pseudo-required.html",
+      "02-06-form-pseudo-classes-validity.html",
+      "02-07-specificity-arms-race.html",
+      "02-08-specificity-at-a-glance.html",
+      "02-09-universal-selector-inheritance.html",
+      "02-XX-order-of-stylesheets.html"
+    ]
+  },
+  {
+    "chapter": "3",
+    "title":"可见格式化模型",
+    "path":"./chapter-03"
+  },
+  {
+    "chapter": "4",
+    "title":"网页排版",
+    "path":"./chapter-04"
+  },
+  {
+    "chapter": "5",
+    "title":"漂亮的盒子",
+    "path":"./chapter-05"
+  },
+  {
+    "chapter": "6",
+    "title":"内容布局",
+    "path":"./chapter-06"
+  },
+  {
+    "chapter": "7",
+    "title":"页面布局与网格",
+    "path":"./chapter-07"
+  },
+  {
+    "chapter": "8",
+    "title":"响应式 Web 设计与 CSS",
+    "path":"./chapter-08"
+  },
+  {
+    "chapter": "9",
+    "title":"表单与数据表",
+    "path":"./chapter-09"
+  },
+  {
+    "chapter": "10",
+    "title":"变换、过渡与动画",
+    "path":"./chapter-10"
+  },
+  {
+    "chapter": "11",
+    "title":"高级特效",
+    "path":"./chapter-11"
+  }
+]
